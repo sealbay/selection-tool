@@ -1,0 +1,44 @@
+int areal1, areal2, areal3, areal4, a1, a2;
+
+void setup(){
+  size(600,600);
+  a1 = 0;
+  a2 = 0;
+  
+}
+
+void draw(){
+  background(255);
+  
+  fill(0);
+  circle(a1, a2 ,10);
+  
+  circle(mouseX,mouseY,10);
+  
+  line(a1,a2,mouseX,a2);
+  line(a1,a2,a1,mouseY);
+  line(a1,mouseY,mouseX,mouseY);
+  line(mouseX,a2,mouseX,mouseY);
+  
+  areal1 = mouseX-a1;
+  areal2 = mouseY-a2;
+  areal3 = areal1 * areal2;
+  areal4 = areal1 + areal2 + areal1 + areal2;
+  
+  text(areal1 / 10 + " + " + areal2 / 10 + " + " + areal1 / 10 + " + " + areal2 / 10 + " = " + areal4 / 10, 10, 550);
+  text(areal1 / 10 + " * " + areal2 / 10 + " = " + areal3 / 100, 10, 575);
+  
+  text(areal1 / 10, (mouseX-a1)/2+a1, a2);
+  text(areal2 / 10, a1, (mouseY-a1)/2 + a2);
+  
+  println(areal1,areal2);
+  
+}
+
+void mouseClicked(){
+ a1 = mouseX;
+ a2 = mouseY;
+ 
+}
+
+
